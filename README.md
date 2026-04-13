@@ -10,4 +10,4 @@
 
 <hr>
 
-This app is made with [Yii2 Advanced Project Template](http://www.yiiframework.com/) as a skeleton.
+This app is made with [Yii2 Framework](http://www.yiiframework.com/) as a skeleton.
