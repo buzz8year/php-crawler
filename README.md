@@ -2,7 +2,7 @@
     <h1 align="left">PHP Crawling Client</h1>
 </p>
 
-Deep crawling PHP server-client application initially made to parse e-commerce websites, but can be easily elaborated to parse new for instance. Clean and readable code.
+Deep crawling PHP server-client application initially made to parse e-commerce websites, but can be easily elaborated to parse news, for instance. Clean and readable code.
 
 - Morphology
 - Cron friendly (linux)
