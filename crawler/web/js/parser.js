@@ -1,4 +1,4 @@
-$(function () {
+$(function() {
 
     $(document).on('click', '.tree-expand', function() {
         $(this).next().toggleClass('expanded');
@@ -7,7 +7,8 @@ $(function () {
 
     $(document).ready(function() {
         selected = $('.category-tree-select.selected');
-        if (!selected.hasClass('selected')) return;
+        if (!selected.hasClass('selected')) 
+			return;
 		
 		parentRow = selected.parent().parent();
 		parentRow.prev().click();
@@ -27,7 +28,8 @@ function expandParents(row)
 
 function keywordOnSelect(sourceId) 
 {
-	if (!$('#keywordList').val()) return;
+	if (!$('#keywordList').val()) 
+		return;
 	
 	$.post('index.php?r=parser/build-url', 
 		{
