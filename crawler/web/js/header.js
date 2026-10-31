@@ -37,7 +37,8 @@ function headerValueGenerals()
         {
             $(document).on('click', '.header-value-add', function() {
 
-                if ($(this).hasClass('disabled')) return;
+                if ($(this).hasClass('disabled')) 
+                    return;
 
                 var html = '<div class=\'row header-value\'>' +
                     '                <div class=\'col-lg-11\'>' +
@@ -65,10 +66,10 @@ function headerValueGenerals()
 
 function pasteToEmpty(valData) 
 {
-    if (headerValueGenerals().voids().length < 1)
+    if (headerValueGenerals.voids.length < 1)
         $('.header-value-add').trigger('click');
 
-    $(headerValueGenerals().voids()[0]).val(valData);
+    $(headerValueGenerals.voids[0]).val(valData);
     
     headerValueGenerals();
 }
