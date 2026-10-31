@@ -77,10 +77,10 @@ function pasteHeaderValue(headerValueId, headerSourceId)
         if (!data) 
             return;
     
-        if (headerSourceGenerals().voids().length < 1)
+        if (headerSourceGenerals.voids.length < 1)
             $('.header-value-add').trigger('click');
             
-        $(headerSourceGenerals().voids()[0]).val(data).next().val(headerValueId);
+        $(headerSourceGenerals.voids[0]).val(data).next().val(headerValueId);
     
         // headerSourceGenerals();
         $(this).prop('selectedIndex', 0);
