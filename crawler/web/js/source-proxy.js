@@ -77,10 +77,10 @@ function pasteProxyValue(proxyValueId, proxySourceId)
         if (!data) 
             return;
 
-        if (proxySourceGenerals().voids().length > 0)
+        if (proxySourceGenerals.voids.length > 0)
             $('.proxy-value-add').trigger('click');
             
-        $(proxySourceGenerals().voids()[0]).val(data).next().val(proxyValueId);
+        $(proxySourceGenerals.voids[0]).val(data).next().val(proxyValueId);
         
         // proxySourceGenerals();
         $(this).prop('selectedIndex', 0);
