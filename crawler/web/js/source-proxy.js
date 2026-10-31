@@ -92,8 +92,9 @@ function deleteProxyValue(proxySourceId, i)
 {
     confirm('Delete proxy?');
     
-    $.get( 'index.php?r=source/proxy-delete&id=' + proxySourceId )
-    .done( function (data) {
+    $.get('index.php?r=source/proxy-delete&id=' + proxySourceId)
+    .done(function(data) {
+        
         if (data == 1) $('.proxy-value-' + i).remove();
         // if (data == 0) valueRow.removeClass('label-primary').addClass('label-danger').find('small').text('OFF');
         // else valueRow.removeClass('label-danger').addClass('label-primary').find('small').text('ON');
