@@ -10,7 +10,7 @@ function headerSourceGenerals()
         voids: function() 
         {
             return $('.header-value input[type=text].header-value-text').filter(function() { 
-                return $(this).val().length == 0 
+                return $(this).val().length == 0;
             });
         },
         addButtonSwitch: function() 
@@ -37,7 +37,8 @@ function headerSourceGenerals()
         {
             $(document).on('click', '.header-value-add', function() {
                 
-                if ($(this).hasClass('disabled')) return;
+                if ($(this).hasClass('disabled')) 
+                    return;
 
                 var html =  '<div class=\'row header-value\'>' +
                             '    <div class=\'col-lg-2\'>' +
@@ -72,15 +73,14 @@ function pasteHeaderValue(headerValueId, headerSourceId)
 {
     $.get('index.php?r=source/header-create&hid=' + headerValueId + '&sid=' + headerSourceId )
     .done(function (data) {
-        if (!data) return;
+        
+        if (!data) 
+            return;
     
-        if (headerSourceGenerals().voids().length > 0)
-            $(headerSourceGenerals().voids()[0] ).val(data).next().val(headerValueId);
-            
-        else {
+        if (headerSourceGenerals().voids().length < 1)
             $('.header-value-add').trigger('click');
-            $( headerSourceGenerals().voids()[0] ).val(data).next().val(headerValueId);
-        }
+            
+        $(headerSourceGenerals().voids()[0]).val(data).next().val(headerValueId);
     
         // headerSourceGenerals();
         $(this).prop('selectedIndex', 0);
@@ -93,7 +93,7 @@ function deleteHeaderValue(headerSourceId, i)
     confirm('Delete header?');
     
     $.get('index.php?r=source/header-delete&id=' + headerSourceId)
-    .done(function (data) {
+    .done(function(data) {
         if (data != 1) return; 
         $('.header-value-' + i).remove();
         // if (data == 0) valueRow.removeClass('label-primary').addClass('label-danger').find('small').text('OFF');
