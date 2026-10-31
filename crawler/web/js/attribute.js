@@ -1,5 +1,6 @@
-$(function () {
-    $('.attribute-add').click(function () {
+$(function() {
+    
+    $('.attribute-add').click(function() {
         var html = '<div class=\'row attribute\'>' +
             '                <div class=\'col-lg-4\'>' +
             '                    <input type=\'text\' value=\'\' name=\'attributes[]\' class=\'form-control\'>' +
@@ -12,7 +13,7 @@ $(function () {
         $('.attribute-add').before(html);
     });
 
-    $(document).on('click', '.attribute-remove', function () {
+    $(document).on('click', '.attribute-remove', function() {
         $(this).parents('.attribute').remove();
     });
 });
