@@ -66,10 +66,10 @@ function regionGenerals()
 
 function pasteRegionToEmpty(valData) 
 {
-    if (regionGenerals().voids().length < 1)
+    if (regionGenerals.voids.length < 1)
         $('.region-add').trigger('click');
         
-    $(regionGenerals().voids()[0]).val(valData);
+    $(regionGenerals.voids[0]).val(valData);
     
     regionGenerals();
 }
