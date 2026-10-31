@@ -94,6 +94,7 @@ function deleteHeaderValue(headerSourceId, i)
     
     $.get('index.php?r=source/header-delete&id=' + headerSourceId)
     .done(function(data) {
+        
         if (data != 1) return; 
         $('.header-value-' + i).remove();
         // if (data == 0) valueRow.removeClass('label-primary').addClass('label-danger').find('small').text('OFF');
