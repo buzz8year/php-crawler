@@ -15,27 +15,30 @@ function regionGenerals()
         },
         addButtonSwitch: function() 
         {
-            if ( methods.voids().length == 0 ) $('.region-add').removeClass('disabled').attr({'title': 'Add new region'});
+            if (methods.voids().length == 0) 
+                $('.region-add').removeClass('disabled').attr({'title': 'Add new region'});
+                
             else $('.region-add').addClass('disabled').attr({'title': 'Please fill the input first...'});
         },
         onType: function() 
         {
-            $(document).on('input', '.region input', function () {
+            $(document).on('input', '.region input', function() {
                 methods.addButtonSwitch();
             });
         },
         onRemove: function() 
         {
-            $(document).on('click', '.region-remove', function () {
+            $(document).on('click', '.region-remove', function() {
                 $(this).parents('.region').remove();
                 methods.addButtonSwitch();
             });
         },
         onAdd: function() 
         {
-            $(document).on('click', '.region-add', function () {
+            $(document).on('click', '.region-add', function() {
 
-                if ($(this).hasClass('disabled')) return;
+                if ($(this).hasClass('disabled')) 
+                    return;
 
                 var html =  '<div class=\'row region\'>' +
                 '                <div class=\'col-lg-10\'>' +
@@ -63,13 +66,10 @@ function regionGenerals()
 
 function pasteRegionToEmpty(valData) 
 {
-    if (regionGenerals().voids().length > 0)
-        $(regionGenerals().voids()[0]).val(valData);
-        
-    else {
+    if (regionGenerals().voids().length < 1)
         $('.region-add').trigger('click');
-        $(regionGenerals().voids()[0]).val(valData);
-    }
+        
+    $(regionGenerals().voids()[0]).val(valData);
     
     regionGenerals();
 }
