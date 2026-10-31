@@ -22,20 +22,20 @@ function headerValueGenerals()
         },
         onType: function() 
         {
-            $(document).on('input', '.header-value input', function () {
+            $(document).on('input', '.header-value input', function() {
                 methods.addButtonSwitch();
             });
         },
         onRemove: function() 
         {
-            $(document).on('click', '.header-value-remove', function () {
+            $(document).on('click', '.header-value-remove', function() {
                 $(this).parents('.header-value').remove();
                 methods.addButtonSwitch();
             });
         },
         onAdd: function() 
         {
-            $(document).on('click', '.header-value-add', function () {
+            $(document).on('click', '.header-value-add', function() {
 
                 if ($(this).hasClass('disabled')) return;
 
@@ -55,7 +55,7 @@ function headerValueGenerals()
         }
     }
 
-    $.each( this.methods, function(funcName) {
+    $.each(this.methods, function(funcName) {
         methods[funcName]();
     });
 
@@ -63,7 +63,7 @@ function headerValueGenerals()
 }
 
 
-function pasteToEmpty (valData) 
+function pasteToEmpty(valData) 
 {
     if (headerValueGenerals().voids().length > 0)
         $(headerValueGenerals().voids()[0] ).val(valData);
