@@ -10,7 +10,7 @@ function headerValueGenerals()
         voids: function() 
         {
             return $('.header-value input').filter(function() { 
-                return $(this).val().length == 0 
+                return $(this).val().length == 0;
             });
         },
         addButtonSwitch: function() 
@@ -65,13 +65,10 @@ function headerValueGenerals()
 
 function pasteToEmpty(valData) 
 {
-    if (headerValueGenerals().voids().length > 0)
-        $(headerValueGenerals().voids()[0] ).val(valData);
-        
-    else {
+    if (headerValueGenerals().voids().length < 1)
         $('.header-value-add').trigger('click');
-        $(headerValueGenerals().voids()[0]).val(valData);
-    }
+
+    $(headerValueGenerals().voids()[0]).val(valData);
     
     headerValueGenerals();
 }
