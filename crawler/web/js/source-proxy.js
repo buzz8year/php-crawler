@@ -22,22 +22,23 @@ function proxySourceGenerals()
         },
         onType: function() 
         {
-            $(document).on('input', '.proxy-value input', function () {
+            $(document).on('input', '.proxy-value input', function() {
                 methods.addButtonSwitch();
             });
         },
         onRemove: function() 
         {
-            // $(document).on('click', '.proxy-value-remove', function () {
+            // $(document).on('click', '.proxy-value-remove', function() {
             //     $(this).parents('.proxy-value').remove();
             //     methods.addButtonSwitch();
             // });
         },
         onAdd: function() 
         {
-            $(document).on('click', '.proxy-value-add', function () {
+            $(document).on('click', '.proxy-value-add', function() {
 
-                if ($(this).hasClass('disabled')) return;
+                if ($(this).hasClass('disabled')) 
+                    return;
 
                 var html =  '<div class=\'row proxy-value\'>' +
                             '    <div class=\'col-lg-3\'>' +
@@ -60,7 +61,7 @@ function proxySourceGenerals()
         }
     }
 
-    $.each( this.methods, function (funcName) {
+    $.each(this.methods, function(funcName) {
         methods[funcName]();
     });
 
@@ -68,19 +69,18 @@ function proxySourceGenerals()
 }
 
 
-function pasteProxyValue (proxyValueId, proxySourceId) 
+function pasteProxyValue(proxyValueId, proxySourceId) 
 {
     $.get('index.php?r=source/proxy-create&pid=' + proxyValueId + '&sid=' + proxySourceId)
     .done(function(data) {
-        if (!data) return;
+        
+        if (!data) 
+            return;
 
-        if ( proxySourceGenerals().voids().length > 0 )
-            $(proxySourceGenerals().voids()[0] ).val(data).next().val(proxyValueId);
-            
-        else {
+        if (proxySourceGenerals().voids().length > 0)
             $('.proxy-value-add').trigger('click');
-            $( proxySourceGenerals().voids()[0] ).val(data).next().val(proxyValueId);
-        }
+            
+        $(proxySourceGenerals().voids()[0]).val(data).next().val(proxyValueId);
         
         // proxySourceGenerals();
         $(this).prop('selectedIndex', 0);
@@ -88,7 +88,7 @@ function pasteProxyValue (proxyValueId, proxySourceId)
 }
 
 
-function deleteProxyValue (proxySourceId, i) 
+function deleteProxyValue(proxySourceId, i) 
 {
     confirm('Delete proxy?');
     
