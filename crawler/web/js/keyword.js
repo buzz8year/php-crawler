@@ -66,10 +66,10 @@ function keywordGenerals()
 
 function pasteToEmpty(valData) 
 {
-    if (keywordGenerals().voids().length < 1)
+    if (keywordGenerals.voids.length < 1)
         $('.keyword-add').trigger('click');
         
-    $(keywordGenerals().voids()[0]).val(valData);
+    $(keywordGenerals.voids[0]).val(valData);
     
     keywordGenerals();
 }
