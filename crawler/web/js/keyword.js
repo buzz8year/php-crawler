@@ -15,27 +15,30 @@ function keywordGenerals()
         },
         addButtonSwitch: function() 
         {
-            if ( methods.voids().length == 0 ) $('.keyword-add').removeClass('disabled').attr({'title': 'Add new keyword'});
+            if (methods.voids().length == 0) 
+                $('.keyword-add').removeClass('disabled').attr({'title': 'Add new keyword'});
+                
             else $('.keyword-add').addClass('disabled').attr({'title': 'Please fill the input first...'});
         },
         onType: function() 
         {
-            $(document).on('input', '.keyword input', function () {
+            $(document).on('input', '.keyword input', function() {
                 methods.addButtonSwitch();
             });
         },
         onRemove: function() 
         {
-            $(document).on('click', '.keyword-remove', function () {
+            $(document).on('click', '.keyword-remove', function() {
                 $(this).parents('.keyword').remove();
                 methods.addButtonSwitch();
             });
         },
         onAdd: function() 
         {
-            $(document).on('click', '.keyword-add', function () {
+            $(document).on('click', '.keyword-add', function() {
 
-                if ($(this).hasClass('disabled')) return;
+                if ($(this).hasClass('disabled')) 
+                    return;
 
                 var html = '<div class=\'row keyword\'>' +
                     '                <div class=\'col-lg-10\'>' +
@@ -63,13 +66,10 @@ function keywordGenerals()
 
 function pasteToEmpty(valData) 
 {
-    if (keywordGenerals().voids().length > 0)
-        $(keywordGenerals().voids()[0]).val(valData);
-        
-    else {
+    if (keywordGenerals().voids().length < 1)
         $('.keyword-add').trigger('click');
-        $(keywordGenerals().voids()[0]).val(valData);
-    }
+        
+    $(keywordGenerals().voids()[0]).val(valData);
     
     keywordGenerals();
 }
